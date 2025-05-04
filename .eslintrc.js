@@ -6,6 +6,6 @@ module.exports = {
     plugins: ["prettier", "local"],
     rules: {
         "prettier/prettier": "error",
-        "local/activate": 1,
+        "local/activate": ["error"],
     },
 };

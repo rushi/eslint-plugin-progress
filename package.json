@@ -1,9 +1,10 @@
 {
     "name": "eslint-plugin-progress",
-    "version": "0.0.1",
+    "version": "0.5.0",
     "description": "Report progress when running ESLint. Useful for large projects!",
     "main": "index.js",
     "scripts": {
+        "lint": "eslint .",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {

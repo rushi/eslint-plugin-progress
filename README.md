@@ -59,14 +59,19 @@ $
 ## Usage
 
 ```
-yarn add taskworld/eslint-plugin-progress --dev
+npm install -D rushi/eslint-plugin-progress
 ```
 
-```yml
-# .eslintrc
-plugins: progress
-rules:
-    progress/activate: 1
+```js
+{
+    "plugins": [
+        "progress"
+    ],
+    "rules": {
+        // Change skipStats to true to not print the statistics
+        "progress/activate": ["warn", { skipStats: false }]
+    }
+}
 ```
 
 ## Known issues
