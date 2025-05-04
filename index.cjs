@@ -1,4 +1,4 @@
-import progress from "./activate-rule.cjs";
+const progress = require("./activate-rule.cjs")
 
 const eslintPlugin = {
     meta: {
@@ -11,4 +11,4 @@ const eslintPlugin = {
     },
 };
 
-export default eslintPlugin;
+module.exports = eslintPlugin;

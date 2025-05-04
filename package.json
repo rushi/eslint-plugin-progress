@@ -1,8 +1,10 @@
 {
     "name": "eslint-plugin-progress",
     "version": "0.5.0",
-    "description": "Report progress when running ESLint. Useful for large projects!",
-    "main": "index.js",
+    "description": "Report progress when running ESLint and print statistics at the end of the run",
+    "main": "./index.js",
+    "exports": "./index.cjs",
+    "type": "module",
     "scripts": {
         "lint": "eslint .",
         "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,6 +14,7 @@
         "url": "git+https://github.com/rushi/eslint-plugin-progress.git"
     },
     "keywords": [
+        "eslint",
         "eslint-plugin"
     ],
     "author": "Rushi Vishavadia <rushi@hey.com>",
@@ -37,5 +40,19 @@
         "arrowParens": "always",
         "bracketSameLine": false,
         "tabWidth": 4
+    },
+    "peerDependencies": {
+        "eslint": ">=8"
+    },
+    "engines": {
+        "node": ">= 16"
+    },
+    "publishConfig": {
+        "ignore": [
+            ".github/",
+            "*.md",
+            ".eslintrc.js",
+            "tsconfig.json"
+        ]
     }
 }

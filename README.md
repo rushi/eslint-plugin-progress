@@ -6,14 +6,14 @@ Report progress when running ESLint. Useful for large projects with thousands of
 
 Displays progress while running ESLint, and a summary when exiting:
 
-Before:
+Before
 
 ```bash
 $ npx eslint .
 # (silence for 5 minutes)
 ```
 
-After:
+After
 
 ```bash
 $ npx eslint .
@@ -52,16 +52,27 @@ Slowest 10 files
 npm install https://github.com/rushi/eslint-plugin-progress
 ```
 
-Configure in your ES Lint config:
+## Configuration
 
-```js
+Configure in your ES Lint config
+
+```json
+// import progress from "eslint-plugin-progress";
 {
-    "plugins": [
-        "progress"
-    ],
-    "rules": {
-        // Change skipStats to true to not print the statistics
-        "progress/activate": ["warn", { skipStats: false, skipSlowFiles: false, interval: 10000 }]
+    {
+        settings: {
+            progress: {
+                skipStats: false,
+                skipSlowFiles: false,
+                interval: 10000,
+            },
+        },
+        plugins: {
+            progress,
+        }
+    },
+    rules: {
+        "progress/activate": ["warn"],
     }
 }
 ```
