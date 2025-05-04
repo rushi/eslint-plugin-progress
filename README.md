@@ -1,6 +1,6 @@
 # eslint-plugin-progress
 
-Report progress when running ESLint. Useful for large projects with thousands of files!
+Report progress when running ESLint. Useful for large projects with thousands of files
 
 ## Features
 
@@ -8,31 +8,31 @@ Displays progress while running ESLint, and a summary when exiting:
 
 Before:
 
-```
-$ eslint .
-(silence for 10 minutes)
-$
+```bash
+$ npx eslint .
+# (silence for 5 minutes)
 ```
 
 After:
 
-```
-$ eslint .
-* [2018-04-26T11:02:06.176Z] Processed 0 files...
-* [2018-04-26T11:02:21.481Z] Processed 155 files...
-* [2018-04-26T11:02:36.494Z] Processed 350 files...
-* [2018-04-26T11:02:51.500Z] Processed 569 files...
-* [2018-04-26T11:03:06.569Z] Processed 880 files...
-* [2018-04-26T11:03:21.637Z] Processed 1207 files...
-* [2018-04-26T11:03:36.650Z] Processed 1562 files...
-* [2018-04-26T11:03:51.664Z] Processed 1959 files...
+```bash
+$ npx eslint .
+
+* [11:02:06 PM] Processed 0 files...
+* [11:02:16 PM] Processed 155 files...
+* [11:02:26 PM] Processed 350 files...
+* [11:02:36 PM] Processed 569 files...
+* [11:02:46 PM] Processed 880 files...
+* [11:02:56 PM] Processed 1,207 files...
+* [11:03:06 PM] Processed 1,562 files...
+* [11:03:16 PM] Processed 1,959 files...
 
 ESLint Stats Report
 ===================
 
-2286 files processed in 1.9 minutes.
+2,286 files processed in 1 minutes 30 seconds
 
-## Slowest 20 files
+Slowest 10 files
  * path/to/AdvancedSearchFilters.react.js (4079 ms)
  * path/to/RichTextEditor.react.js (2043 ms)
  * path/to/MessageBody.react.js (1037 ms)
@@ -41,26 +41,18 @@ ESLint Stats Report
  * path/to/WorkspaceRetroPane.react.js (871 ms)
  * path/to/MessageStream.react.js (721 ms)
  * path/to/AppV2.react.js (652 ms)
- * path/to/Gantt.react.js (641 ms)
  * path/to/OnboardingPage.react.js (536 ms)
- * path/to/Tasklist.react.js (505 ms)
- * path/to/Task.react.js (479 ms)
- * path/to/MentionMembersBox.react.js (463 ms)
- * path/to/MessageStreamContainer.react.js (448 ms)
- * path/to/OverviewTask.react.js (385 ms)
- * path/to/FlashBubbleNotiContainer.react.js (383 ms)
- * path/to/ProjectListBody.react.js (377 ms)
- * path/to/MessageStreamScroller.react.js (372 ms)
- * path/to/TaskPreviewCard.react.js (372 ms)
  * path/to/ResourcesTable.react.js (364 ms)
-$
+
 ```
 
 ## Usage
 
+```bash
+npm install https://github.com/rushi/eslint-plugin-progress
 ```
-npm install -D rushi/eslint-plugin-progress
-```
+
+Configure in your ES Lint config:
 
 ```js
 {
@@ -69,11 +61,15 @@ npm install -D rushi/eslint-plugin-progress
     ],
     "rules": {
         // Change skipStats to true to not print the statistics
-        "progress/activate": ["warn", { skipStats: false }]
+        "progress/activate": ["warn", { skipStats: false, skipSlowFiles: false, interval: 10000 }]
     }
 }
 ```
 
-## Known issues
+### Known issues
 
 It doesn’t keep the stat of the last file processed.
+
+## Author
+
+Original work by [Thai Pangsakulyanont](https://github.com/taskworld/eslint-plugin-progress), and extended by Rushi Vishavadia
