@@ -56,7 +56,7 @@ npm install https://github.com/rushi/eslint-plugin-progress
 
 Configure in your ES Lint config
 
-```json
+```js
 // import progress from "eslint-plugin-progress";
 {
     {
