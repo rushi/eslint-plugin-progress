@@ -26,7 +26,8 @@ module.exports = function createProgressReporter(options) {
                     const now = Date.now();
                     if (now > lastReported + options.interval) {
                         lastReported = now;
-                        console.log(`* [${new Date().toLocaleTimeString()}] Processed ${stats.length} files...`);
+                        const totalCount = stats.length.toLocaleString();
+                        console.log(`* [${new Date().toLocaleTimeString()}] Processed ${totalCount} files...`);
                     }
 
                     if (lastFile) {
@@ -58,7 +59,7 @@ module.exports = function createProgressReporter(options) {
             console.log();
         }
 
-        console.log(`${stats.length} files processed in ${formatDuration(totalTime)}.`);
+        console.log(`${stats.length.toLocaleString()} files processed in ${formatDuration(totalTime)}.`);
         stats.sort((a, b) => b.duration - a.duration);
         console.log();
 
