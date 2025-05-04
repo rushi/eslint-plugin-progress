@@ -64,10 +64,9 @@ yarn add taskworld/eslint-plugin-progress --dev
 
 ```yml
 # .eslintrc
-plugins:
-  progress
+plugins: progress
 rules:
-  progress/activate: 1
+    progress/activate: 1
 ```
 
 ## Known issues
