@@ -83,4 +83,4 @@ It doesn’t keep the stat of the last file processed.
 
 ## Author
 
-Original work by [Thai Pangsakulyanont](https://github.com/taskworld/eslint-plugin-progress), and extended by Rushi Vishavadia
+Re-written by Rushi Vishavadia based on original work by [Thai Pangsakulyanont](https://github.com/taskworld/eslint-plugin-progress)
